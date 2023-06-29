@@ -10,3 +10,4 @@ for n in filter(iseven, nums):
 
 for n in filter(str.isupper, "AbcDef"):
     print(n)
+
