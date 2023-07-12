@@ -30,6 +30,26 @@ class Student(Person):
             self.college = college
 
 
+
+class Employee(Person):
+    def __init__(self, name, email, job, company):
+        super().__init__(name, email)
+        self.job = job
+        self.company = company
+
+    def show(self):
+        super().show()  # call super class version
+        print(self.job)
+        print(self.company)
+
+    def change(self, job=None, company=None):
+        if job is not None:
+            self.job = job
+
+        if company is not None:
+            self.company = company
+
+
 s = Student("Scott", "scott@gmail.com", "CS", "Stanford")
 s.change(college="MIT")
 s.set_email("scott@yahoo.com")
