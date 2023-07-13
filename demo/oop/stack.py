@@ -1,3 +1,18 @@
+class  Stack_Iterator:
+    def __init__(self, data):
+        self.data = data
+        self.pos = len(data) - 1
+
+    def __next__(self):
+        if self.pos >= 0:
+            self.pos -= 1
+            return  self.data[self.pos + 1]
+        else:
+            raise StopIteration
+
+
+
+
 class Stack:
     def __init__(self):
         self.data = []
@@ -18,11 +33,16 @@ class Stack:
     def clear(self):
         self.data.clear()
 
+    def __iter__(self):
+        return Stack_Iterator(self.data)
 
 s = Stack()
 s.push(10)
 s.push(20)
 s.push(30)
-print(s.pop())
-print(s.peek())
-print(s.length)    # property
+# print(s.pop())
+# print(s.peek())
+# print(s.length)    # property
+
+for n in s:
+    print(n)
