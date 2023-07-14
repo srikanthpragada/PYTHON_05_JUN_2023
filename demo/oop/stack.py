@@ -1,4 +1,4 @@
-class  Stack_Iterator:
+class Stack_Iterator:
     def __init__(self, data):
         self.data = data
         self.pos = len(data) - 1
@@ -6,11 +6,9 @@ class  Stack_Iterator:
     def __next__(self):
         if self.pos >= 0:
             self.pos -= 1
-            return  self.data[self.pos + 1]
+            return self.data[self.pos + 1]
         else:
             raise StopIteration
-
-
 
 
 class Stack:
@@ -35,6 +33,7 @@ class Stack:
 
     def __iter__(self):
         return Stack_Iterator(self.data)
+
 
 s = Stack()
 s.push(10)
