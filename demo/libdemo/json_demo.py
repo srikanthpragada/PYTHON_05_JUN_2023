@@ -1,6 +1,6 @@
 import json
 
-
+ 
 class Person:
     def __init__(self, name, email, age):
         self.name = name

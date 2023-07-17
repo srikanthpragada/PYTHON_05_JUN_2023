@@ -1,5 +1,6 @@
 # take customer name and display email address
 
+
 with open("customers.txt", "rt") as f:
     name = input("Enter name :")
     for line in f:
