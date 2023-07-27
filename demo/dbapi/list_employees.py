@@ -6,7 +6,7 @@ import dbutil
 try:
     con = sqlite3.connect(dbutil.DBNAME)
     cur = con.cursor()
-    cur.execute(f"select * from {dbutil.TABLENAME} order by salary")  # SQL Command
+    cur.execute(f"select * from {dbutil.TABLENAME} order by salary desc")  # SQL Command
 
     for id, name, job, salary in cur.fetchall():
         print(f"{id:2} {name:30} {job:10} {salary:10}")

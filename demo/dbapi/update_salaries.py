@@ -1,3 +1,5 @@
+# Update EMPLOYEES table by taking data from salaries.txt
+
 import sqlite3
 import dbutil
 
@@ -9,7 +11,7 @@ updated = notfound = error = 0
 for line in f.readlines():
     parts = line.strip().split(",")
     if len(parts) != 2:
-        continue          # Ignore line
+        continue          # Ignore line as it doesn't have proper data
 
     try:
         id, salary = parts
